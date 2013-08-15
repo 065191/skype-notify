@@ -1,0 +1,11 @@
+#!/bin/bash
+message="$1"
+name="$2"
+if [ "`echo "$message" |grep -i alex`" ] ; then
+    notify-send -i skype-chat "$name" "$message";
+    zenity --info --text="Your name was mentioned by $name : $message";
+    echo "$name" >> /home/alex/people_to_kill.txt
+else 
+notify-send -i skype-chat "$name" "$message"
+fi
+
